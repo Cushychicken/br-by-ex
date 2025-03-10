@@ -1,6 +1,3 @@
-[submodule "01-basic/buildroot"]
-	path = 01-basic/buildroot
-	url = git@github.com:buildroot/buildroot.git
 [submodule "buildroot"]
 	path = buildroot
-	url = https://github.com/buildroot/buildroot.git
+	url = https://github.com/buildroot/buildroot
