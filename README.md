@@ -4,15 +4,15 @@ Buildroot by example. A few basic implementations of `buildroot`, showing some s
 
 Examples include:
 
-	* a basic out-of-tree project
-	* a project with a custom driver added
-	* a device tree customized to add support for an I2C sensor
-	* a project with a filesystem overlay 
-	* a project with a custom C application that's compiled and installed to target
-	* a customized Linux kernel 
-	* adding extlinux.conf support, for booting from a kernel/DTB in the rootfs
-	* an impementation of `swupdate`, with A/B dual-copy software updates initated by a user
-	* an impementation of `swupdate` with signed builds, with updates initiated by a user 
+* a basic out-of-tree project
+* a project with a custom driver added
+* a device tree customized to add support for an I2C sensor
+* a project with a filesystem overlay 
+* a project with a custom C application that's compiled and installed to target
+* a customized Linux kernel 
+* adding extlinux.conf support, for booting from a kernel/DTB in the rootfs
+* an impementation of `swupdate`, with A/B dual-copy software updates initated by a user
+* an impementation of `swupdate` with signed builds, with updates initiated by a user 
 
 # Setup
 
@@ -40,10 +40,17 @@ This will make your build take longer, but it also ensures your new example won'
 
 # Project Index
 
+Here's an index of what this repository contains. Click down a level to see project-specific READMEs. 
+
 - `01-basic`: simple out of tree buildroot project, with a package added
-- `02-driver`: buildroot project with a non-standard device driver compiled into the Linux kernel
-- `03-dts-custom`: customizing the device tree 
-- `04-rfs-overlay`: very simple rootfs overlay, with test file added
+- `02-rfs-overlay`: very simple rootfs overlay, with test file added
+
+# Future Work
+
+Here's a roadmap of what we plan to cover in future projects. These will move up to the Project Index as they are completed.  
+
+- `03-driver`: buildroot project with a non-standard device driver compiled into the Linux kernel
+- `04-dts-custom`: customizing the device tree 
 - `05-custom-app`: basic C application that's compiled and installed to target system on `make`
 - `06-python`: install Python on target, along with a basic script
 - `07-cfg-frag`: customizing the Linux kernel using config fragments
