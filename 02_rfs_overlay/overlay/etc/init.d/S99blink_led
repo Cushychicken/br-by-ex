@@ -1,0 +1,29 @@
+#!/bin/sh
+
+### BEGIN INIT INFO
+# Provides:          blink_led
+# Required-Start:    $all
+# Required-Stop:
+# Default-Start:     2 3 4 5
+# Default-Stop:
+# Short-Description: Blinks the onboard Raspberry Pi LED
+### END INIT INFO
+
+case "$1" in
+    start)
+        echo "Starting LED blink script..."
+        /usr/bin/blink.sh &
+        ;;
+    stop)
+        echo "Stopping LED blink script..."
+        pkill -f "/usr/bin/blink.sh"
+        ;;
+    restart)
+        "$0" stop
+        "$0" start
+        ;;
+    *)
+        echo "Usage: $0 {start|stop|restart}"
+        exit 1
+        ;;
+esac

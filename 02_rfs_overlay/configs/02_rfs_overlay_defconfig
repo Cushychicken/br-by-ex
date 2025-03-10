@@ -1,15 +1,6 @@
 BR2_arm=y
 BR2_cortex_a72=y
 BR2_ARM_FPU_NEON_VFPV4=y
-BR2_TOOLCHAIN_EXTERNAL=y
-BR2_TOOLCHAIN_EXTERNAL_CUSTOM=y
-BR2_TOOLCHAIN_EXTERNAL_DOWNLOAD=y
-BR2_TOOLCHAIN_EXTERNAL_URL="file://${BR2_EXTERNAL}/../tools/arm-buildroot-linux-gnueabihf_sdk-buildroot.tar.gz"
-BR2_TOOLCHAIN_EXTERNAL_GCC_13=y
-BR2_TOOLCHAIN_EXTERNAL_HEADERS_6_6=y
-BR2_TOOLCHAIN_EXTERNAL_CUSTOM_GLIBC=y
-# BR2_TOOLCHAIN_EXTERNAL_INET_RPC is not set
-BR2_TOOLCHAIN_EXTERNAL_CXX=y
 BR2_GLOBAL_PATCH_DIR="board/raspberrypi/patches"
 BR2_DOWNLOAD_FORCE_CHECK_HASHES=y
 BR2_SYSTEM_DHCP="eth0"
@@ -38,5 +29,26 @@ BR2_PACKAGE_HOST_DOSFSTOOLS=y
 BR2_PACKAGE_HOST_GENIMAGE=y
 BR2_PACKAGE_HOST_KMOD_XZ=y
 BR2_PACKAGE_HOST_MTOOLS=y
+
+##################################################
+### Everything above this line is RPi4 default ###
+##################################################
+
+### Configures buildroot to use external toolchain from tarball 
+BR2_TOOLCHAIN_EXTERNAL=y
+BR2_TOOLCHAIN_EXTERNAL_CUSTOM=y
+BR2_TOOLCHAIN_EXTERNAL_DOWNLOAD=y
+BR2_TOOLCHAIN_EXTERNAL_URL="file://${BR2_EXTERNAL}/../tools/arm-buildroot-linux-gnueabihf_sdk-buildroot.tar.gz"
+BR2_TOOLCHAIN_EXTERNAL_GCC_13=y
+BR2_TOOLCHAIN_EXTERNAL_HEADERS_6_6=y
+BR2_TOOLCHAIN_EXTERNAL_CUSTOM_GLIBC=y
+# BR2_TOOLCHAIN_EXTERNAL_INET_RPC is not set
+BR2_TOOLCHAIN_EXTERNAL_CXX=y
+
+#################################################
+### br-by-ex 02_rootfs_overlay customizations ###
+#################################################
+
+# Points to overlay directory
 BR2_ROOTFS_OVERLAY="${BR2_EXTERNAL}/overlay"
 
