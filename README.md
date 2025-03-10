@@ -3,6 +3,7 @@
 Buildroot by example. A few basic implementations of `buildroot`, showing some simple features and implementations that the working embedded Linux engineer might care about. 
 
 Examples include:
+
 	* a basic out-of-tree project
 	* a project with a custom driver added
 	* a device tree customized to add support for an I2C sensor
@@ -19,14 +20,14 @@ Examples include:
 2. Navigate into this repo, and run `git submodule --init`.
 3. Make an empty directory called `tools/` inside your repo.
 4. Run `make -C buildroot raspberrypi4_defconfig`
-5. Run `make -C buildroot sdk`
+5. Run `make -C buildroot sdk`. (This will tkae a while.)
 6. When complete, copy the `tar.gz` toolchain file into `tools/` from `buildroot/output/images/`
 
 # Building an Example Project
 
 All projects are structured as out-of-tree buildroot projects. To build a specific project, set `BR2_EXTERNAL` to the specific directory, load the defconfig, and then make.
 
-For example, to build the project in `08-swupdate`, run:
+For example, to build the project in `09-swupdate`, run:
 
 ```
 make $BR2_EXTERNAL=$PWD/09-swupdate -C buildroot 09_swupdate_defconfig
