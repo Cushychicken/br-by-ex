@@ -1,0 +1,7 @@
+source "package/Config.in"
+
+config BR2_PACKAGE_BASIC_RFS_OVERLAY_RPI4
+    bool "Basic out of tree buildroot project for RPi 4 with rootfs overlay"
+    help
+      Example support for rootfs overlay in RPi4 out-of-tree project 
+
