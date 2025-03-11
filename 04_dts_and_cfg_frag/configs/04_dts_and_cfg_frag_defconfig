@@ -53,3 +53,6 @@ BR2_PACKAGE_RPI_FIRMWARE_CONFIG_FILE="${BR2_EXTERNAL}/board/rpi4/config_4.txt"
 
 # Points to overlay directory
 BR2_ROOTFS_OVERLAY="${BR2_EXTERNAL}/overlay"
+
+# Kernel config fragment
+BR2_LINUX_KERNEL_CONFIG_FRAGMENT_FILES="${BR2_EXTERNAL}/board/rpi4/linux/config.fragment"
