@@ -44,15 +44,19 @@ BR2_TOOLCHAIN_EXTERNAL_CUSTOM_GLIBC=y
 # BR2_TOOLCHAIN_EXTERNAL_INET_RPC is not set
 BR2_TOOLCHAIN_EXTERNAL_CXX=y
 
+######################################################
+### br-by-ex - customizations from prior exercises ###
+######################################################
+
+BR2_ROOTFS_OVERLAY="${BR2_EXTERNAL}/overlay"
+BR2_PACKAGE_RPI_FIRMWARE_CONFIG_FILE="${BR2_EXTERNAL}/board/rpi4/config_4.txt"
+
 ###################################################
 ### br-by-ex 04_dts_and_cfg_frag customizations ###
 ###################################################
 
-# Points to our customized config_4.txt file
-BR2_PACKAGE_RPI_FIRMWARE_CONFIG_FILE="${BR2_EXTERNAL}/board/rpi4/config_4.txt"
-
-# Points to overlay directory
-BR2_ROOTFS_OVERLAY="${BR2_EXTERNAL}/overlay"
-
 # Kernel config fragment
 BR2_LINUX_KERNEL_CONFIG_FRAGMENT_FILES="${BR2_EXTERNAL}/board/rpi4/linux/config.fragment"
+
+# Custom device tree directory 
+BR2_LINUX_KERNEL_CUSTOM_DTS_DIR="${BR2_EXTERNAL}/board/rpi4/dtso"
