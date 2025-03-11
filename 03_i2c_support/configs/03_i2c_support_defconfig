@@ -18,7 +18,6 @@ BR2_PACKAGE_XZ=y
 BR2_PACKAGE_ASCII_INVADERS=y
 BR2_PACKAGE_RPI_FIRMWARE=y
 BR2_PACKAGE_RPI_FIRMWARE_VARIANT_PI4=y
-BR2_PACKAGE_RPI_FIRMWARE_CONFIG_FILE="board/raspberrypi4/config_4.txt"
 BR2_PACKAGE_KMOD=y
 BR2_PACKAGE_KMOD_TOOLS=y
 BR2_TARGET_ROOTFS_EXT2=y
@@ -49,3 +48,8 @@ BR2_TOOLCHAIN_EXTERNAL_CXX=y
 ### br-by-ex 03_i2c_support customizations ###
 ##############################################
 
+# Points to our customized config_4.txt file
+BR2_PACKAGE_RPI_FIRMWARE_CONFIG_FILE="${BR2_EXTERNAL}/board/rpi4/config_4.txt"
+
+# Points to overlay directory
+BR2_ROOTFS_OVERLAY="${BR2_EXTERNAL}/overlay"
