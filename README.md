@@ -44,12 +44,12 @@ Here's an index of what this repository contains. Click down a level to see proj
 
 - `01-basic`: simple out of tree buildroot project, with a package added
 - `02-rfs-overlay`: very simple rootfs overlay, with test file added
+- `03-i2c-support`: add support for I2C, and also a device driver for a time-of-flight sensor
 
 # Future Work
 
 Here's a roadmap of what we plan to cover in future projects. These will move up to the Project Index as they are completed.  
 
-- `03-driver`: buildroot project with a non-standard device driver compiled into the Linux kernel
 - `04-dts-custom`: customizing the device tree 
 - `05-custom-app`: basic C application that's compiled and installed to target system on `make`
 - `06-python`: install Python on target, along with a basic script
@@ -59,4 +59,5 @@ Here's a roadmap of what we plan to cover in future projects. These will move up
 - `10-ab-updates`: make software updates safer with dual copy rootfs'es 
 - `11-rfs-encrypt`: encrypt your `swupdate` builds for code security
 - `12-signed-updates`: add signing to `swupdate` builds to ensure updates are only made from approved sources
+- `13-multiple-boards`: deploy the same application to multiple hardware targets
 
