@@ -4,7 +4,6 @@ BR2_ARM_FPU_NEON_VFPV4=y
 BR2_GLOBAL_PATCH_DIR="board/raspberrypi/patches"
 BR2_DOWNLOAD_FORCE_CHECK_HASHES=y
 BR2_SYSTEM_DHCP="eth0"
-BR2_ROOTFS_POST_BUILD_SCRIPT="board/raspberrypi4/post-build.sh"
 BR2_ROOTFS_POST_IMAGE_SCRIPT="board/raspberrypi4/post-image.sh"
 BR2_LINUX_KERNEL=y
 BR2_LINUX_KERNEL_CUSTOM_TARBALL=y
@@ -60,3 +59,6 @@ BR2_LINUX_KERNEL_CONFIG_FRAGMENT_FILES="${BR2_EXTERNAL}/board/rpi4/linux/linux.c
 
 # Custom device tree directory 
 BR2_LINUX_KERNEL_CUSTOM_DTS_DIR="${BR2_EXTERNAL}/board/rpi4/dtso"
+
+# Extra post-build script to copy *.dtbo's into rpi-firmware/overlays/
+BR2_ROOTFS_POST_BUILD_SCRIPT="board/raspberrypi4/post-build.sh ${BR2_EXTERNAL}board/rpi4/post-build.sh"
