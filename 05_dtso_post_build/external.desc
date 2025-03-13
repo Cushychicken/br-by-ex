@@ -1,4 +1,4 @@
-name: 01_basic
-desc: Basic out-of-tree Buildroot project for RPi4 
-maintainers: Nash Reilly <cushychicken@gmail.com>
+name: 05_DTSO_POST_BUILD
+desc: Buildroot project for RPi4 w/ DTSO and post build scripts
+maintainers: Init <firmware.jobs.0x5a@gmail.com>
 
