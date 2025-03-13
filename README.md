@@ -5,12 +5,12 @@ Buildroot by example. A few basic implementations of `buildroot`, showing some s
 Examples include:
 
 * a basic out-of-tree project
-* a project with a custom driver added
-* a device tree customized to add support for an I2C sensor
-* a project with a filesystem overlay 
-* a project with a custom C application that's compiled and installed to target
-* a customized Linux kernel 
-* adding extlinux.conf support, for booting from a kernel/DTB in the rootfs
+* how to customize the Linux kernel, and store customizations 
+* how to customize the device tree
+* adding files to the rootfs using overlays
+* compiling and installing a custom C application 
+* installing a Python runtime to the target
+* adding extlinux.conf support, for booting a kernel/DTB in the rootfs
 * an impementation of `swupdate`, with A/B dual-copy software updates initated by a user
 * an impementation of `swupdate` with signed builds, with updates initiated by a user 
 
@@ -36,7 +36,7 @@ make $BR2_EXTERNAL=$PWD/09-swupdate -C buildroot
 
 Note that, if you've built one of the other projects already, you may wish to run `make -C buildroot clean` before building with a new defconfig. 
 
-This will make your build take longer, but it also ensures your new example won't build with unexpected artifacts that mess with with expected operation. 
+This will make your build take longer, but it also ensures your new example won't build with unexpected artifacts that may mess with normal operation. 
 
 # Project Index
 
@@ -45,19 +45,21 @@ Here's an index of what this repository contains. Click down a level to see proj
 - `01-basic`: simple out of tree buildroot project, with a package added
 - `02-rfs-overlay`: very simple rootfs overlay, with test file added
 - `03-i2c-support`: add support for I2C, and also a device driver for a time-of-flight sensor
+- `04-kernel-fragment`: storing kernel customizations for our I2C sensor
+- `05-dtso-post-build`: telling the kernel how to interact with our sensor; plus, some shell scripts to properly load the overlay
 
 # Future Work
 
 Here's a roadmap of what we plan to cover in future projects. These will move up to the Project Index as they are completed.  
 
-- `04-dts-custom`: customizing the device tree 
-- `05-custom-app`: basic C application that's compiled and installed to target system on `make`
-- `06-python`: install Python on target, along with a basic script
-- `07-cfg-frag`: customizing the Linux kernel using config fragments
-- `08-extlinux`: using a modern `extlinux.conf` to bundle the Kernel and DTB within the rootfs
-- `09-swupdate`: implement software updates using `swupdate`
-- `10-ab-updates`: make software updates safer with dual copy rootfs'es 
-- `11-rfs-encrypt`: encrypt your `swupdate` builds for code security
-- `12-signed-updates`: add signing to `swupdate` builds to ensure updates are only made from approved sources
-- `13-multiple-boards`: deploy the same application to multiple hardware targets
+- `custom-app`: basic C application that's compiled and installed to target system on `make`
+- `python`: install Python on target, along with a basic script
+- `spi-support`: get SPI up and running 
+- `extlinux`: using a modern `extlinux.conf` to bundle the Kernel and DTB within the rootfs
+- `swupdate`: implement software updates using `swupdate`
+- `ab-updates`: make software updates safer with dual copy rootfs'es 
+- `rfs-encrypt`: encrypt your `swupdate` builds for code security
+- `signed-updates`: add signing to `swupdate` builds to ensure updates are only made from approved sources
+- `multiple-boards`: deploy the same application to multiple hardware targets
+- `ext-toolchain`: speed up your builds by saving your compilers and tools as a separate tarball
 

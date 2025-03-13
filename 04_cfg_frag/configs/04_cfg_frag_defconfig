@@ -50,15 +50,10 @@ BR2_TOOLCHAIN_EXTERNAL_CXX=y
 BR2_ROOTFS_OVERLAY="${BR2_EXTERNAL}/overlay"
 BR2_PACKAGE_RPI_FIRMWARE_CONFIG_FILE="${BR2_EXTERNAL}/board/rpi4/config_4.txt"
 
-###################################################
-### br-by-ex 04_dts_and_cfg_frag customizations ###
-###################################################
+###########################################
+### br-by-ex 04_cfg_frag customizations ###
+###########################################
 
 # Kernel config fragment
 BR2_LINUX_KERNEL_CONFIG_FRAGMENT_FILES="${BR2_EXTERNAL}/board/rpi4/linux/linux.config"
 
-# Custom device tree directory 
-BR2_LINUX_KERNEL_CUSTOM_DTS_DIR="${BR2_EXTERNAL}/board/rpi4/dtso"
-
-# Extra post-build script to copy *.dtbo's into rpi-firmware/overlays/
-BR2_ROOTFS_POST_BUILD_SCRIPT="board/raspberrypi4/post-build.sh ${BR2_EXTERNAL}/board/rpi4/post-build.sh"

@@ -1,0 +1,4 @@
+name: 01_basic
+desc: Basic out-of-tree Buildroot project for RPi4 
+maintainers: Nash Reilly <cushychicken@gmail.com>
+
