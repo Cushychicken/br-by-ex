@@ -1,0 +1,32 @@
+#!/bin/sh
+
+### BEGIN INIT INFO
+# Provides:          rfd77402
+# Required-Start:    
+# Required-Stop:     
+# Default-Start:     S
+# Default-Stop:      
+# Short-Description: Load rfd77402 driver
+### END INIT INFO
+
+case "$1" in
+  start)
+    echo "Loading rfd77402 driver..."
+    echo rfd77402 0x4c > /sys/bus/i2c/devices/i2c-1/new_device
+    ;;
+  stop)
+    echo "Unloading rfd77402 driver..."
+    echo 0x4c > /sys/bus/i2c/devices/i2c-1/delete_device
+    ;;
+  restart)
+    $0 stop
+    $0 start
+    ;;
+  *)
+    echo "Usage: $0 {start|stop|restart}"
+    exit 1
+    ;;
+esac
+
+exit 0
+
