@@ -62,4 +62,5 @@ Here's a roadmap of what we plan to cover in future projects. These will move up
 - `signed-updates`: add signing to `swupdate` builds to ensure updates are only made from approved sources
 - `multiple-boards`: deploy the same application to multiple hardware targets
 - `ext-toolchain`: speed up your builds by saving your compilers and tools as a separate tarball
+- `init-systemd`: change your init system over to `systemd`, instead of the default `Busybox` 
 
