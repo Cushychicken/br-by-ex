@@ -20,7 +20,7 @@ Examples include:
 2. Navigate into this repo, and run `git submodule --init`.
 3. Make an empty directory called `tools/` inside your repo.
 4. Run `make -C buildroot raspberrypi4_defconfig`
-5. Run `make -C buildroot sdk`. (This will tkae a while.)
+5. Run `make -C buildroot sdk`. (This will take a while.)
 6. When complete, copy the `tar.gz` toolchain file into `tools/` from `buildroot/output/images/`
 
 # Building an Example Project
