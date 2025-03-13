@@ -1,7 +1,0 @@
-source "package/Config.in"
-
-config BR2_PACKAGE_BASIC_EXT_RPI4
-    bool "Basic out of tree buildroot project for RPi 4"
-    help
-      Enable support for RPi4 out-of-tree project with external toolchain
-
