@@ -24,5 +24,4 @@ gpu_mem_1024=100
 
 # Enable UART0 for serial console on ttyAMA0
 dtoverlay=miniuart-bt
-dtoverlay=rfd77402
 dtparam=i2c1=on
