@@ -1,0 +1,32 @@
+#!/bin/sh
+
+### BEGIN INIT INFO
+# Provides:          blink_led
+# Required-Start:    
+# Required-Stop:     
+# Default-Start:     S
+# Default-Stop:      
+# Short-Description: Blink LED if distance is below threshold
+### END INIT INFO
+
+case "$1" in
+  start)
+    echo "Starting Blink LED application..."
+    /usr/bin/closeblink &
+    ;;
+  stop)
+    echo "Stopping Blink LED application..."
+    pkill closeblink
+    ;;
+  restart)
+    $0 stop
+    $0 start
+    ;;
+  *)
+    echo "Usage: $0 {start|stop|restart}"
+    exit 1
+    ;;
+esac
+
+exit 0
+

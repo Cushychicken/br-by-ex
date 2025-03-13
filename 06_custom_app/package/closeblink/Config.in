@@ -1,0 +1,8 @@
+config BR2_PACKAGE_CLOSEBLINK
+        bool "closeblink"
+        default y
+        help
+          A application that reads an IIO sensor and blinks an LED if the 
+          value is below a threshold.
+
+          https://www.nodocs.com
