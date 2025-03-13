@@ -1,4 +1,4 @@
-name: 01_basic
-desc: Basic out-of-tree Buildroot project for RPi4 
-maintainers: Nash Reilly <cushychicken@gmail.com>
+name: 06_CUSTOM_APP
+desc: Customized RPi4 with external package
+maintainers: Init <firmware.jobs.0x5a@gmail.com>
 

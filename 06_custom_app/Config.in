@@ -1,2 +1,2 @@
-source "package/Config.in"
+source "$BR2_EXTERNAL_06_CUSTOM_APP_PATH/package/closeblink/Config.in"
 
