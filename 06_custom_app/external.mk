@@ -20,8 +20,5 @@
 	# $(info Building my_custom_package)
 	# # Custom build logic can go here (if needed)
 
-# Register the package
-BR2_GLOBAL_PATCH_DIR ?= $(BR2_EXTERNAL_06_CUSTOM_APP_PATH)/patches
+include $(sort $(wildcard $(BR2_EXTERNAL_06_CUSTOM_APP_PATH)/package/*/*.mk))
 
-# Ensure the package gets built
-BR2_PACKAGE_CLOSEBLINK ?= y
