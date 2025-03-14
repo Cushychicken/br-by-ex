@@ -7,7 +7,7 @@
 #define LED_BRIGHTNESS_PATH "/sys/class/leds/ACT/brightness"
 #define LED_TRIGGER_PATH "/sys/class/leds/ACT/trigger"
 #define BLINK_THRESHOLD 100
-#define BLINK_DELAY 100000  // 0.1 seconds in microseconds
+#define BLINK_DELAY 50000  // 0.05 seconds in microseconds
 
 // Function to read an integer value from a sysfs file
 int read_sysfs_value(const char *path) {
