@@ -53,7 +53,7 @@ Here's an index of what this repository contains. Click down a level to see proj
 Here's a roadmap of what we plan to cover in future projects. These will move up to the Project Index as they are completed.  
 
 - `custom-app`: basic C application that's compiled and installed to target system on `make`
-- `python`: install Python on target, along with a basic script
+- `python`: install Python on target, along with a basic script, plus a package or two
 - `spi-support`: get SPI up and running 
 - `extlinux`: using a modern `extlinux.conf` to bundle the Kernel and DTB within the rootfs
 - `swupdate`: implement software updates using `swupdate`
@@ -63,4 +63,5 @@ Here's a roadmap of what we plan to cover in future projects. These will move up
 - `multiple-boards`: deploy the same application to multiple hardware targets
 - `ext-toolchain`: speed up your builds by saving your compilers and tools as a separate tarball
 - `init-systemd`: change your init system over to `systemd`, instead of the default `Busybox` 
+- `graphics`: run a screen, and build a GUI
 
