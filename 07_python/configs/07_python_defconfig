@@ -57,4 +57,4 @@ BR2_ROOTFS_POST_BUILD_SCRIPT="board/raspberrypi4/post-build.sh ${BR2_EXTERNAL}/b
 ### br-by-ex 07_python customizations ###
 #########################################
 
-
+BR2_PACKAGE_PYTHON3=y
