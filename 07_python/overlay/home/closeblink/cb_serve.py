@@ -1,3 +1,4 @@
+from flask import Flask, jsonify, render_template
 import time
 
 DISTANCE_PATH = "/sys/bus/iio/devices/iio:device0/in_distance_raw"
@@ -5,6 +6,8 @@ LED_BRIGHTNESS_PATH = "/sys/class/leds/ACT/brightness"
 LED_TRIGGER_PATH = "/sys/class/leds/ACT/trigger"
 BLINK_THRESHOLD = 100
 BLINK_DELAY = 0.05  # 0.05 seconds
+
+app = Flask(__name__)
 
 
 def read_sysfs_value(path):
@@ -31,20 +34,16 @@ def blink_led():
     time.sleep(BLINK_DELAY)
 
 
-def main():
-    write_sysfs_value(LED_TRIGGER_PATH, "none")
+@app.route("/")
+def index():
+    return render_template("index.html")
 
-    while True:
-        if (distance := read_sysfs_value(DISTANCE_PATH)) < 0:
-            print("Error reading distance sensor")
-            break
 
-        if distance < BLINK_THRESHOLD:
-            blink_led()
-        else:
-            write_sysfs_value(LED_BRIGHTNESS_PATH, "0")
-            time.sleep(0.5)  # 500 ms
+@app.route("/distance")
+def get_distance():
+    distance = read_sysfs_value(DISTANCE_PATH)
+    return jsonify({"distance": distance})
 
 
 if __name__ == "__main__":
-    main()
+    app.run(host="0.0.0.0", port=5000, debug=True)

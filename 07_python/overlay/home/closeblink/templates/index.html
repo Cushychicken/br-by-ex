@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Distance Sensor</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script>
+        function updateDistance() {
+            fetch('/distance')
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('distance-value').innerText = data.distance;
+                });
+        }
+        setInterval(updateDistance, 100); // Update every 0.1 seconds
+    </script>
+</head>
+<body class="container text-center mt-5">
+    <h1>Distance Sensor</h1>
+    <p class="lead">Current Distance: <span id="distance-value">Loading...</span></p>
+</body>
+</html>
+
